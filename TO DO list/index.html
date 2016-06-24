@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script>
+          $(function() {
+            $("#datePicker").datepicker({
+                minDate: 0,
+                beforeShow: function (input, inst) {
+                    setTimeout(function () {
+                        inst.dpDiv.css({
+                            top: 50,
+                            left: 230
+                        });
+                    }, 0);
+                }
+            });
+          });
+        </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="todoCtrl.js"></script>
+    </head>
+
+    <body ng-app="todoApp" ng-controller="todoCtrl">
+      <h2>My Tasks</h2>
+
+      <form ng-submit="todoAdd()">
+          <input class="title" type="text" ng-model="todoInput" size="50" placeholder="Task">
+          <br />
+          <input id="datePicker" class="date" type="text" ng-model="dueDate" size="50" placeholder="Due date">
+          <br />
+          <input class="btn addNewButton" type="submit" value="Add New">
+      </form>
+
+      <br />
+
+      <h3>Queued:</h3>
+      <div ng-repeat="x in todoList">
+          <input type="checkbox" ng-model="x.done">
+          <span ng-bind="x.todoText"></span>
+          <span ng-bind="x.dueDate"></span>
+      </div>
+
+      <p><button class="btn" ng-click="remove()">Remove marked</button></p>
+    </body>
+</html>

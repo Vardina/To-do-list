@@ -1,0 +1,38 @@
+h2, h3 {
+  font-family: tahoma;
+  color: #555555;
+}
+form .title,
+form .date {
+  width: 200px;
+  margin: 5px auto;
+  border-radius: 3px;
+  border-style: solid;
+  padding: 6px 7px;
+}
+.addNewButton {
+  margin-top: 10px;
+}
+.btn {
+  background: #1a75ff;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  padding: 8px 12px;
+}
+.btn:hover {
+  background: #66a3ff;
+}
+.ui-datepicker-header.ui-widget-header {
+  background: #1a75ff;
+  color: #ffffff;
+}
+.ui-state-default, .ui-widget-content .ui-state-default {
+  background: #cce0ff;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {
+  background: #fbf9ee;
+}
+.ui-widget-content {
+  border: 1px solid #cccccc;
+}
